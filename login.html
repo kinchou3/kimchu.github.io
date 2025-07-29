@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIMCHOU READING BOOK FREE - Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Light mode (default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --nav-link-color: #555;
+  --nav-link-hover: #000;
+  --auth-bg: #f5f5f5;
+  --btn-bg: #007bff;
+  --btn-text: #fff;
+  --input-bg: #fff;
+  --input-border: #ddd;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --header-bg: #1a1a1a;
+  --nav-link-color: #bbb;
+  --nav-link-hover: #fff;
+  --auth-bg: #1e1e1e;
+  --btn-bg: #0d6efd;
+  --btn-text: #fff;
+  --input-bg: #2d2d2d;
+  --input-border: #444;
+}
+
+/* Apply the variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background-color: var(--header-bg);
+}
+
+nav ul li a {
+  color: var(--nav-link-color);
+}
+
+nav ul li a:hover {
+  color: var(--nav-link-hover);
+}
+
+.auth-container {
+  background-color: var(--auth-bg);
+}
+
+button.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+input {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">KRENKIMCHOU</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="view-book.html">View Books</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn active">Login</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">🌓</button>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-container">
+            <h1>Login to Your Account</h1>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username or Email</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="register.html">Register here</a></p>
+            </div>
+        </div>
+    </main>
+    
+   
+   
+
+    <script src="./js/auth.js"></script>
+</body>
+</html>

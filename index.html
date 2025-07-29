@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Moul&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Moul&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" id="theme-style">
+    <title>KIMCHOU READING BOOK FREE</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Additional CSS for search functionality */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .search-box {
+            width: 60%;
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .search-box:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+        }
+        
+        .more-books-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .more-books-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        /* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode header {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .logo {
+    color: #bb86fc;
+}
+
+.dark-mode nav ul li a {
+    color: #e0e0e0;
+}
+
+.dark-mode nav ul li a:hover {
+    color: #bb86fc;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(20, 20, 20, 0.8)), url('../images/hero-bg.jpg');
+}
+
+.dark-mode .book-card,
+.dark-mode .feature,
+.dark-mode .team-member,
+.dark-mode .info-item,
+.dark-mode .auth-container,
+.dark-mode #contact-form {
+    background-color: #1e1e1e;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+.dark-mode .book-card p,
+.dark-mode .team-member p {
+    color: #a0a0a0;
+}
+
+.dark-mode .btn {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+.dark-mode .btn:hover {
+    background-color: #9b5cf6;
+}
+
+.dark-mode footer {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.dark-mode .page {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">KRENKIMCHOU</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="./viewbook.html">View Books</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>សូមស្វាគមន៍!ការអានសៀវភៅដោយមិនគិតថ្លៃ</h1>
+            <p>Read thousands of books online or download them for offline reading.</p>
+            <a href="#" class="btn">Browse Books</a>
+        </section>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" placeholder="ស្វែងរកសៀវភៅ..." onkeyup="searchBooks()">
+        </div>
+
+        <section class="featured-books">
+            <h2>សៀវភៅពិសេស</h2>
+            <div class="book-grid" id="bookGrid">
+                <!-- Featured books will be added here by JavaScript -->
+            </div>
+            
+            <button id="loadMoreBtn" class="more-books-btn">មើលសៀវភៅបន្ថែម</button>
+        </section>
+        <!-- Add this near the top of your navigation -->
+<li><a href="#" id="uploadBtn">Upload Book</a></li>
+
+<!-- Add this before the closing </main> tag -->
+<div id="uploadModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Upload PDF Book</h2>
+        <form id="uploadForm">
+            <div class="form-group">
+                
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" id="bookTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="bookAuthor">Author:</label>
+                <input type="text" id="bookAuthor" required>
+            </div>
+            <div class="form-group">
+                <label for="bookCover">Cover Image:</label>
+                <input type="file" id="bookCover" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="bookPdf">PDF File:</label>
+                <input type="file" id="bookPdf" accept=".pdf" required>
+            </div>
+            <button type="submit" class="btn">Upload Book</button>
+        </form>
+    </div>
+</div>
+    </main>
+
+    <script>
+        // Book data
+        const books = [
+            {
+                title: "រឿង​ មនុស្សពីរនាក់នៅផ្ទះជិតគ្នា",
+                author: "KrenKimChou",
+                image: "./images/book-1.png",
+                link: "./reading.html"
+            },
+            {
+                title: "រឿង ពស់កេងកង",
+                author: "KrenKimChou",
+                image: "./images/book-2.jpg",
+                link: "./reading2.html"
+            },
+            {
+                title: "រឿង គង់ហ៊ាន",
+                author: "KrenKimChou",
+                image: "./images/book-3.jpg",
+                link: "./reading3.html"
+            },
+            {
+                title: "រឿង​ ចោរ​ចិត្ត​ជា",
+                author: "KrenKimChou",
+                image: "./images/book-4.png",
+                link: "./reading4.html"
+            },
+            {
+                title: "រឿង ចៅកាំបិតបន្ទោះ",
+                author: "KrenKimchou",
+                image: "./images/book-5.jpg",
+                link: "./reading5.html"
+            },
+            {
+                title: "រឿង អាខ្វាក់​អាខ្វិន",
+                author: "KrenKimChou",
+                image: "./images/book-6.jpg",
+                link: "./reading6.html"
+            },
+            {
+                title: "រឿង ចាបស្រុក​និង​ចាបព្រៃ",
+                author: "KrenKimChou",
+                image: "./images/book-7.png",
+                link: "./reading7.html"
+            },
+            {
+                title: "រឿង ចៅ​ធុង ចៅ​សាញ់",
+                author: "KrenKimChou",
+                image: "./images/book-8.jpg",
+                link: "./reading8.html"
+            },
+            {
+                title: "រឿង អន្ទង់​វែង​ឆ្នាំង​វែង",
+                author: "KrenKimChou",
+                image: "./images/book-9.jpg",
+                link: "./reading9.html"
+            },
+            {
+                title: "រឿង សង្គ្រាម​រវាង​គីង្គក់​និង​តា​ព្រហ្ម",
+                author: "KrenKimChou",
+                image: "./images/book-10.jpg",
+                link: "./reading10.html"
+            }
+        ];
+
+        // Display initial books (first 3)
+        function displayBooks(bookList, count = 3) {
+            const bookGrid = document.getElementById('bookGrid');
+            bookGrid.innerHTML = '';
+            
+            const booksToShow = bookList.slice(0, count);
+            
+            booksToShow.forEach(book => {
+                const bookCard = document.createElement('div');
+                bookCard.className = 'book-card';
+                bookCard.innerHTML = `
+                    <img src="${book.image}" alt="${book.title}">
+                    <h3>${book.title}</h3>
+                    <p>By ${book.author}</p>
+                    <a href="${book.link}" class="btn">ចុចដើម្បីមើល/អាន</a>
+                `;
+                bookGrid.appendChild(bookCard);
+            });
+        }
+
+        // Search function
+        function searchBooks() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const filteredBooks = books.filter(book => 
+                book.title.toUpperCase().includes(filter) || 
+                book.author.toUpperCase().includes(filter)
+            );
+            
+            displayBooks(filteredBooks, filteredBooks.length);
+            document.getElementById('loadMoreBtn').classList.add('hidden');
+        }
+
+        // Load more books
+        document.getElementById('loadMoreBtn').addEventListener('click', function() {
+            displayBooks(books, books.length);
+            this.classList.add('hidden');
+        });
+
+        // Initialize page
+        window.onload = function() {
+            displayBooks(books);
+        };
+        
+    </script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
